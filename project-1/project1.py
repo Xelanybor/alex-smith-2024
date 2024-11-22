@@ -12,6 +12,8 @@ class FrequentlyUsedWords():
         Args:
             word (str): The current word being read from the input string.
         """
+
+        word = word.lower()
         
         if word in self.wordCounts:
             self.wordCounts[word] += 1
