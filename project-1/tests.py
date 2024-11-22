@@ -36,7 +36,7 @@ class TestFrequentlyUsedWords(unittest.TestCase):
         # Most frequent words were obtained using https://wordcounter.net/
         expectedFrequentWords = ['sit', 'amet', 'vitae', 'sed', 'eros', 'lorem', 'suspendisse', 'non', 'vestibulum', 'ut']
 
-        for word in text_string:
+        for word in text_string.split():
             frequentlyUsedWords.readWord(word)
 
         # Test default value of 10
