@@ -13,8 +13,10 @@ class FrequentlyUsedWords():
             word (str): The current word being read from the input string.
         """
 
+        # Make the method case insensitive
         word = word.lower()
         
+        # Update the stored word counts
         if word in self.wordCounts:
             self.wordCounts[word] += 1
         else:
