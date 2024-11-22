@@ -33,9 +33,16 @@ class TestFrequentlyUsedWords(unittest.TestCase):
             except:
                 text_string = ''
 
-        # Most frequent words were obtained using https://wordcounter.net/
-        expectedFrequentWords = ['sit', 'amet', 'vitae', 'sed', 'eros', 'lorem', 'suspendisse', 'non', 'vestibulum', 'ut']
+        # Remove all punctuation
+        text_string = text_string.translate({
+            ord(','): '',
+            ord('.'): ''
+        })
 
+        # Most frequent words were obtained using http://www.writewords.org.uk/word_count.asp
+        expectedFrequentWords = ['sit', 'amet', 'in', 'vitae', 'sed', 'eros', 'lorem', 'suspendisse', 'non', 'vestibulum']
+
+        # Read in text word by word
         for word in text_string.split():
             frequentlyUsedWords.readWord(word)
 
@@ -46,8 +53,8 @@ class TestFrequentlyUsedWords(unittest.TestCase):
         self.assertEqual(set(expectedFrequentWords), set(mostFrequentWords))
 
         # Test a different value for n
-        mostFrequentWords = frequentlyUsedWords.getFrequentlyUsedWords(5)
-        self.assertEqual(set(expectedFrequentWords[:5]),set(mostFrequentWords))
+        mostFrequentWords = frequentlyUsedWords.getFrequentlyUsedWords(6)
+        self.assertEqual(set(expectedFrequentWords[:6]),set(mostFrequentWords))
 
 if __name__ == "__main__":
     unittest.main()
