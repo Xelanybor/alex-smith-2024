@@ -29,4 +29,12 @@ class FrequentlyUsedWords():
         Returns:
             list[str]: A list of the top n most frequently used words.
         """
-        pass
+
+        # Get list of words that have been seen
+        words = list(self.wordCounts.keys())
+
+        # Sort the word list by their frequency
+        words.sort(key = lambda word : self.wordCounts.get(word), reverse=True)
+
+        # Return a maximum of n frequently used words, or fewer if there aren't that many words
+        return words if len(words) <= n else words[:n]
