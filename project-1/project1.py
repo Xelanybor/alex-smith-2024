@@ -12,7 +12,11 @@ class FrequentlyUsedWords():
         Args:
             word (str): The current word being read from the input string.
         """
-        pass
+        
+        if word in self.wordCounts:
+            self.wordCounts[word] += 1
+        else:
+            self.wordCounts[word] = 1
 
     def getFrequentlyUsedWords(self, n: int = 10) -> list[str]:
         """Get the top n most frequently used words.
