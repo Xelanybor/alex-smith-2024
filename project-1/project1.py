@@ -1,5 +1,5 @@
 class FrequentlyUsedWords():
-    """Reads words one at a time from a string of text and keeps track of how frequently each word is used, as well as the most frequently used words."""
+    """A class that reads words one at a time from a string of text and keeps track of how frequently each word is used, as well as the most frequently used words."""
 
     wordCounts: dict[str, int] = {}
 
