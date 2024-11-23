@@ -43,7 +43,6 @@ Enter a string of text to analyse, or (q) to quit:
 Type 'q' to quit the program.
 
 ```shell
-```shell
 Question 1: Frequently Used Words
 =================================
 Enter a string of text to analyse, or (q) to quit:
