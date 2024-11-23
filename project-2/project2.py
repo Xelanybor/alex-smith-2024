@@ -1,4 +1,5 @@
 from collections import deque
+import math
 
 class WeightedAverage:
     """A class that processes inputs one at a time, and computes a weighted sum average using a set of weights, acting as a moving average filter.
@@ -36,3 +37,27 @@ class WeightedAverage:
 
         # Zip to get pairs of weights and entries, multiply each pair together, sum all of the products together, and then divide by how many entries there are.
         return sum([x*y for x, y in zip(self.weights, self.previousInputs)]) / len(self.previousInputs)
+    
+
+if __name__ == "__main__":
+
+    # CLI to demonstrate usage of the class
+    print("Question 2: Weighted Sum Average")
+    print("=================================")
+
+    print("This tool generates a sine wave to test the WeightedAverage class.")
+    numSteps = int(input("Enter the number of steps to generate the sine wave:\n> "))
+    stepSize = float(input("Enter the step size for the sine wave:\n> "))
+
+    weights = list(map(float, input("Enter the weights for the moving average filter, separated by spaces:\n> ").split()))
+
+    weightedAverage = WeightedAverage(weights)
+    
+    print("---------------------------------")
+    print("Step | Sine | Weighted Sum Average")
+
+    for i in range(numSteps):
+        entry = math.sin(stepSize * i) # Generate a sine wave with the given step size
+        output = weightedAverage.process(entry) # Process the sine wave entry
+        print(f"{i + 1:>4} | {entry:.2f} | {output:.2f}") # Output the step number, the sine wave entry, and the weighted average output
+        
