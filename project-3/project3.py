@@ -6,6 +6,9 @@ def isPangram(str1: str, alphabet: str=string.ascii_lowercase) -> bool:
     Args:
         str1 (str): The string to check.
         alphabet (str, optional): Which alphabet to use. Defaults to the default English a-z alphabet (specifically `string.ascii_lowercase`).
+
+    Returns:
+        bool: Whether or not the given string is a pangram.
     """
 
     # If there are fewer letters in the string than the alphabet, then it definitely cannot contain all letters in the alphabet
