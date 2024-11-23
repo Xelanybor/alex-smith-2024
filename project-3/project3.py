@@ -40,4 +40,15 @@ def isPangram(str1: str, alphabet: str=string.ascii_lowercase) -> bool:
     # Otherwise if we loop through the whole string and still have letters from the alphabet that haven't been found, return False
     return False
     
-print(isPangram('abcdefghijklmnopqrstuvwxyz'))
+if __name__ == "__main__":
+
+    # CLI to demonstrate usage of the class
+    print("Question 3: Pangram or Not")
+    print("=================================")
+
+    text = input("Enter string to check:\n> ")
+    alphabet = input("Enter the alphabet to check against (leave blank for English a-z):\n> ")
+    alphabet = alphabet if alphabet else string.ascii_lowercase # default to English a-z
+
+    print("---------------------------------")
+    print(f"This string is {'' if isPangram(text, alphabet) else 'not '}a pangram.")
