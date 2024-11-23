@@ -40,3 +40,30 @@ class FrequentlyUsedWords():
 
         # Return a maximum of n frequently used words, or fewer if there aren't that many words
         return words if len(words) <= n else words[:n]
+    
+if __name__ == '__main__':
+
+    # CLI to demonstrate usage of the class
+    print("Question 1: Frequently Used Words")
+    print("=================================")
+
+    userInput = input("Enter a string of text to analyse, or (q) to quit:\n> ")
+
+    # Loops until the user enters 'q' as input
+    while userInput != 'q':
+        frequentlyUsedWords = FrequentlyUsedWords()
+        
+        # Assuming the user enters a valid input with no punctuation since input validation is out of scope for this question
+        for word in userInput.split():
+            frequentlyUsedWords.readWord(word)
+
+        # Output the most frequently used words in order of their frequency
+        print("---------------------------------")
+        print("Most frequently used words:")
+        mostFrequentlyUsedWords = frequentlyUsedWords.getFrequentlyUsedWords()
+        for i, word in enumerate(mostFrequentlyUsedWords):
+            print(f"{i + 1:>2}) {word}")
+
+        print("=================================")
+
+        userInput = input("Enter a string of text to analyse, or (q) to quit:\n> ")
