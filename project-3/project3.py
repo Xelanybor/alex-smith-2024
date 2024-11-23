@@ -11,6 +11,8 @@ def isPangram(str1: str, alphabet: str=string.ascii_lowercase) -> bool:
     # If there are fewer letters in the string than the alphabet, then it definitely cannot contain all letters in the alphabet
     if len(alphabet) > len(str1):
         return False
+    
+    str1 = str1.lower() # Convert to lowercase to make the comparison case-insensitive
 
     # Used to track which letters in the alphabet must still be found in the string
     # This is a dict instead of a list since dict lookup is O(1)
