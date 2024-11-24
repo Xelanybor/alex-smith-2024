@@ -28,9 +28,6 @@ class NumberMachine():
     def reverseDigits(self) -> int:
         """Reverse the digits of the number.
 
-        Args:
-            number (int): The number to transform.
-
         Returns:
             int: The input number with digits reversed.
         """
