@@ -83,4 +83,12 @@ class NumberMachine():
         Returns:
             int: The generated number.
         """
-        pass
+        sumOneNumber = 0 # the number to be returned
+
+        # Loop through the digits of the input number
+        for i in range(5):
+            powerOf10 = 10 ** (4 - i) # As in reverseNumber(), a digit is put in position n by multiplying by 10^(4-n)
+            newDigit = (self.digits[i] + 1) % 10 # Increment the digit by 1, and mod so 10 becomes 0 again
+            sumOneNumber += newDigit * powerOf10
+
+        return sumOneNumber
