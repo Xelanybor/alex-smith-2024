@@ -22,7 +22,17 @@ class NumberMachine():
         Args:
             number (int): Input number.
         """
-        pass
+        
+        # Make sure the number is an int
+        if type(number) != int:
+            raise TypeError
+        
+        # make sure the number is 5 digits
+        if number < 10000 or number > 99999:
+            raise ValueError
+        
+        self.inputNumber = number
+
 
 
     def reverseDigits(self) -> int:
