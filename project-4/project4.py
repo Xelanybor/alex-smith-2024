@@ -16,6 +16,10 @@ class NumberMachine():
 
         Args:
             number (int): The input number. Has to be a 5-digit integer.
+
+        Raises:
+            TypeError: Raised if the input number is not an integer.
+            ValueError: Raised if the input number is not 5 digits.
         """
         self.setNumber(number)
 
@@ -24,6 +28,10 @@ class NumberMachine():
 
         Args:
             number (int): Input number.
+
+        Raises:
+            TypeError: Raised if the input number is not an integer.
+            ValueError: Raised if the input number is not 5 digits.
         """
         
         # Make sure the number is an int
