@@ -1,10 +1,8 @@
 class FrequentlyUsedWords():
     """A class that reads words one at a time from a string of text and keeps track of how frequently each word is used, as well as the most frequently used words."""
 
-    wordCounts: dict[str, int] = {}
-
     def __init__(self):
-        pass
+        self.wordCounts: dict[str, int] = {}
 
     def readWord(self, word: str):
         """Read one word from the input string and update the corresponding word count.
