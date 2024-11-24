@@ -51,7 +51,23 @@ class NumberMachine():
         Returns:
             int: The input number with digits reversed.
         """
-        pass
+        # I came up with the cool one-liner but it's not very readable so I'm not using it
+        # But I think it looks cool so I'm leaving it in
+        # return sum([x * 10 ** i for i, x in enumerate(self.digits)])
+
+        reversedNumber = 0 # the number to be returned
+
+        # Loop through the digits of the input number
+        for i in range(5):
+            # To get a digit in position i into its new position, we multiply it by 10^i
+            # For example, a digit in position 0 of a 5-digit number is actually multiplied 10^4
+            # e.g. (1)2345 => in 1x10^4
+            # When reversed, this digit must go into position (4-0) = 4, where it must be multiplied by 10^0
+            # i.e. 5432(1) => 1x10^0
+            reversedNumber += self.digits[i] * 10 ** i
+
+        return reversedNumber
+
 
     def sumDigits(self) -> int:
         """Calculate the sum of the number's digits.
