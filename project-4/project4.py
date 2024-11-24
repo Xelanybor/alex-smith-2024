@@ -100,3 +100,34 @@ class NumberMachine():
             sumOneNumber += newDigit * powerOf10
 
         return sumOneNumber
+    
+if __name__ == "__main__":
+    # CLI to demonstrate usage of the class
+    print("Question 4: Number machine")
+    print("=================================")
+
+    numberMachine = None
+
+    while not numberMachine:
+
+        number = input("Enter a 5-digit number:\n> ")
+        try:
+            number = int(number) # Make sure the input is an integer
+        except ValueError:
+            print("---------------------------------")
+            print("Number must be an integer!")
+            continue
+
+        try:
+            numberMachine = NumberMachine(number)
+        except ValueError:
+            print("---------------------------------")
+            print("Number must have 5 digits!") # Make sure the number is 5 digits
+        except TypeError:
+            print("---------------------------------")
+            print("Number must be an integer!") # Make sure the number is an integer
+
+    print("=================================")
+    print(f"Reversed number: {numberMachine.reverseDigits()}")
+    print(f"Sum of digits: {numberMachine.sumDigits()}")
+    print(f"Number with one added to each digit: {numberMachine.addOne()}")
