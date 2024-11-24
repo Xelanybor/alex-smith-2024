@@ -55,7 +55,7 @@ class TestNumberMachine(unittest.TestCase):
         self.assertEqual(machine.reverseDigits(), 54321)
 
         machine.setNumber(56789)
-        self.assertEqual(machine.reverseDigits, 98765)
+        self.assertEqual(machine.reverseDigits(), 98765)
 
     def testSumDigits(self):
         """Test the sumDigits method.
