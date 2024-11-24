@@ -5,12 +5,6 @@ class NumberMachine():
     - generates a new number by adding one to each of its digits. For example if the number that is input is 12391 then the output should be displayed as 23402.
     """
 
-    # The number that is input into the number machine
-    inputNumber = 0
-
-    # The digits of the number, used for calculations
-    digits = []
-
     def __init__(self, number: int):
         """Create a new instance of the NumberMachine class.
 
