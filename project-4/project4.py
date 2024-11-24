@@ -8,6 +8,9 @@ class NumberMachine():
     # The number that is input into the number machine
     inputNumber = 0
 
+    # The digits of the number, used for calculations
+    digits = []
+
     def __init__(self, number: int):
         """Create a new instance of the NumberMachine class.
 
@@ -31,7 +34,14 @@ class NumberMachine():
         if number < 10000 or number > 99999:
             raise ValueError
         
+        # Set the input number
         self.inputNumber = number
+
+        # Set the digits of the number (this makes later calculations easier and this way we only do it once)
+        self.digits = [0] * 5
+        for i in range(4, -1, -1): # Set the digits in reverse order, from ones up to ten thousands
+            self.digits[i] = number % 10 # Get the smallest digit
+            number //= 10
 
 
 
