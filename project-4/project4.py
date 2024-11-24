@@ -75,7 +75,7 @@ class NumberMachine():
         Returns:
             int: The sum of the number's digits.
         """
-        pass
+        return sum(self.digits)
 
     def addOne(self) -> int:
         """Generates a new number by adding one to each of its digits. For example if the number that is input is 12391 then the output should be displayed as 23402.
