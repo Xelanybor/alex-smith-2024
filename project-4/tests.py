@@ -22,6 +22,7 @@ class TestNumberMachine(unittest.TestCase):
 
         machine = NumberMachine(12345) # Test that it does accept a 5 digit integer
         self.assertEqual(machine.inputNumber, 12345)
+        self.assertListEqual(machine.digits, [1, 2, 3, 4, 5]) # Ensure the digits are split correctly
 
     def testSetNumber(self):
         """Test the setNumber method.
@@ -43,6 +44,7 @@ class TestNumberMachine(unittest.TestCase):
 
         machine.setNumber(54321) # Test that it does accept a 5 digit integer
         self.assertEqual(machine.inputNumber, 54321)
+        self.assertListEqual(machine.digits, [5, 4, 3, 2, 1]) # Ensure the digits are split correctly
 
     def testReverseDigits(self):
         """Test the reverseDigits method.
