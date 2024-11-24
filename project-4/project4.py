@@ -14,7 +14,7 @@ class NumberMachine():
         Args:
             number (int): The input number. Has to be a 5-digit integer.
         """
-        pass
+        self.setNumber(number)
 
     def setNumber(self, number: int):
         """Set the input number of the number machine. The number must be a 5-digit integer.
